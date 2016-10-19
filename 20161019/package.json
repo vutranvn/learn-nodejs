@@ -1,0 +1,30 @@
+{
+  "name": "20161019",
+  "version": "1.0.0",
+  "description": "Learn day 01",
+  "main": "01_main.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "multer": "^1.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vutranvn/learn-nodejs.git"
+  },
+  "keywords": [
+    "nodejs",
+    "learn-nodejs"
+  ],
+  "author": "Vu Tran",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vutranvn/learn-nodejs/issues"
+  },
+  "homepage": "https://github.com/vutranvn/learn-nodejs#readme"
+}
