@@ -6,4 +6,5 @@ when.js(promise)
 node-redis
 mongodb
 
-express,restify
+express
+restify
