@@ -1,0 +1,25 @@
+{
+  "name": "learn-nodejs",
+  "version": "1.0.0",
+  "description": "learnning nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vutranvn/learn-nodejs.git"
+  },
+  "keywords": [
+    "learn",
+    "nodejs",
+    "nodejs"
+  ],
+  "author": "Vu Tran",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vutranvn/learn-nodejs/issues"
+  },
+  "homepage": "https://github.com/vutranvn/learn-nodejs#readme"
+}
