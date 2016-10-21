@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/vutranvn/learn-nodejs/issues"
   },
-  "homepage": "https://github.com/vutranvn/learn-nodejs#readme"
+  "homepage": "https://github.com/vutranvn/learn-nodejs#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }
