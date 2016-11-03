@@ -10,7 +10,7 @@ var server = restify.createServer({
 });
 // var LRUCache = require('lru-native');
 // var cache = new LRUCache({maxElements: 1000});
-var port = 8010;
+var port = 6789;
 // var winston = require('winston');
 // winston.level = 'debug';
 // winston.add(winston.transports.File, {filename: '/var/log/app.log'});
@@ -21,7 +21,7 @@ var rclient = redis.createClient(
 );
 
 rclient.on("error", function (err) {
-	// console.log("Error " + err);
+	console.log("Error " + err);
 });
 
 server.use(restify.acceptParser(server.acceptable));
@@ -85,15 +85,15 @@ function calcUnit(names, unit, curdate, nameData, callback){
 						var s = 0;
 						var n = 0;
 						_.each(results, function(v){
-							if(v) {
+						   	if(v) {
 								s = op(s,parseInt(v));
 								n = n + 1;
 							}
 						});
 						if(/avg_speed/.test(name)) s = (n == 0) ? 0 : s / n;
-						if(!nameData[name]) nameData[name] = {};
-						nameData[name][curUnitFormat] = s;
-						cb();
+					   	if(!nameData[name]) nameData[name] = {};
+					   	nameData[name][curUnitFormat] = s;
+					   	cb();
 				   });
 				},
 				function(err){
@@ -143,8 +143,8 @@ function calcSpeed(namefull, curUnitFormat, callback){
 				if(result.name == '2xx') r2xx = result.val ? result.val: 0;
 				if(result.name == 'body') body = result.val ? result.val: 0;
 			});
-			var avg_speed = (r2xx == 0) ? 0: (speed / r2xx);
-			var traffic_ps = (body == 0)?0:body*8/60;
+			var avg_speed 	= (r2xx == 0) ? 0: (speed / r2xx);
+			var traffic_ps 	= (body == 0)?0:body*8/60;
 			async.parallel([
 				function(cb){
 					// console.log("hmset:avg_speed " + name + " curUnitFormat:" + curUnitFormat + " " + avg_speed);
@@ -279,10 +279,10 @@ function updateAll(mynames, myexnames, units, curdate, callback){
 
 }
 server.get('/api/v1/update', function (req, res, next) {
-	var params = req.params;
+	var params 	= req.params;
 	var p_names = params['names'];
 	var p_units = params['units'];
-	var date = params['date'];
+	var date 	= params['date'];
 	var names, units;
 	if(p_names) names = p_names.split(',');
 	if(p_units) units = p_units.split(',');
